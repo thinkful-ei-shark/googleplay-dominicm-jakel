@@ -14,7 +14,7 @@ app.get('/app', (req,res)=>{
     let data = [...appData]
     
      if(sort && sort !== "rating" && sort !== "app"){
-         return res.status(400).json({message:'must be "rating" or "App"'})
+         return res.status(400).json({message:'sort must be one of "rating" or "app"'})
      }
         if(sort){
             if(sort === "rating"){
@@ -49,6 +49,7 @@ app.get('/app', (req,res)=>{
     res.json(data)
 })
 
-app.listen(8080, ()=> {console.log('server on 8080')})
+module.exports = app;
+
 
 
